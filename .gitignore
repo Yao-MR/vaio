@@ -1,0 +1,15 @@
+*.class
+*.csv
+*.log
+*.jar
+*.iml
+*.war
+*.DS_Store
+*.project
+*.classpath
+*.settings
+*dependency-reduced-pom.xml
+.idea
+*.parquet
+bin
+target
