@@ -43,29 +43,7 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <addMavenDescriptor>false</addMavenDescriptor>
-                    </archive>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <!-- this is used for inheritance merges -->
-                        <phase>package</phase>
-                        <!-- bind to the packaging phase -->
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
 
             <!-- the Maven Scala plugin will compile Scala source files -->
             <plugin>
@@ -84,33 +62,7 @@
 
             <!-- configure the eclipse plugin to generate eclipse project descriptors
                 for a Scala project -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.11</version>
-                <configuration>
-                    <projectnatures>
-                        <projectnature>org.scala-ide.sdt.core.scalanature</projectnature>
-                        <projectnature>org.eclipse.jdt.core.javanature</projectnature>
-                    </projectnatures>
-                    <buildcommands>
-                        <buildcommand>org.scala-ide.sdt.core.scalabuilder</buildcommand>
-                    </buildcommands>
-                    <classpathContainers>
-                        <classpathContainer>org.scala-ide.sdt.launching.SCALA_CONTAINER</classpathContainer>
-                        <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
-                    </classpathContainers>
-                    <excludes>
-                        <exclude>org.scala-lang:scala-library</exclude>
-                        <exclude>org.scala-lang:scala-compiler</exclude>
-                    </excludes>
-                    <sourceIncludes>
-                        <sourceInclude>**/*.scala</sourceInclude>
-                        <sourceInclude>**/*.java</sourceInclude>
-                        <sourceInclude>**/*</sourceInclude>
-                    </sourceIncludes>
-                </configuration>
-            </plugin>
+
         </plugins>
     </build>
 

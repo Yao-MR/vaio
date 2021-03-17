@@ -11,6 +11,7 @@
 
     <artifactId>algorithms</artifactId>
 
+    <packaging>pom</packaging>
     <modules>
         <module>design</module>
         <module>algorithm</module>
