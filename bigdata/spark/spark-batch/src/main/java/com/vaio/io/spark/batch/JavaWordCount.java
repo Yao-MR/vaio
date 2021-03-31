@@ -10,13 +10,6 @@ import org.apache.spark.sql.SparkSession;
 import scala.Tuple2;
 
 /**
- * 题目:
- * <p>
- * 思路:
- * <p>
- * 算法:
- * <p>
- * 参考:
  *
  * @author yao.wang, (vaio.MR.CN@GMail.com)
  * @date 2020-05-11
@@ -34,8 +27,7 @@ public class JavaWordCount {
         .appName("JavaWordCount")
         .getOrCreate();
 
-    //"hdfs://node1:8020/test/name.txt"
-    JavaRDD<String> lines = spark.sparkContext().textFile("/Users/vaio/WorkSpace/codes/IntellJ/vaio/bigdata/spark/spark-batch/src/main/resources/name.txt",2).toJavaRDD();
+    JavaRDD<String> lines = spark.sparkContext().textFile("/Users/ywang46/WorkSpace/intell/vaio/bigdata/spark/spark-batch/src/main/resources/name.txt",2).toJavaRDD();
     JavaRDD<String> words = lines.flatMap(s -> Arrays.asList(SPACE.split(s)).iterator());
 
     JavaPairRDD<String, Integer> ones = words.mapToPair(s -> new Tuple2<>(s, 1));

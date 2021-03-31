@@ -11,59 +11,5 @@
 
     <artifactId>spark-optimize</artifactId>
 
-    <build>
-        <sourceDirectory>src/main/scala</sourceDirectory>
-
-
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>META-INF/*</include>
-                </includes>
-            </resource>
-        </resources>
-        <plugins>
-            <!-- the Maven compiler plugin will compile Java source files -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-
-
-            <!-- the Maven Scala plugin will compile Scala source files -->
-            <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>scala-maven-plugin</artifactId>
-                <version>3.2.2</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- configure the eclipse plugin to generate eclipse project descriptors
-                for a Scala project -->
-
-        </plugins>
-    </build>
 
 </project>
