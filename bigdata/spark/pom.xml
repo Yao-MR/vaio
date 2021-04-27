@@ -16,5 +16,6 @@
         <module>spark-core</module>
         <module>spark-batch</module>
         <module>spark-optimize</module>
+        <module>spark-delta</module>
     </modules>
 </project>
