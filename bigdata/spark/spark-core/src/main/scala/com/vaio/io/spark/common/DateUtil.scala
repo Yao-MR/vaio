@@ -26,6 +26,7 @@ object DateUtil {
     new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis())
   }
 
+
   def buildGGClauseStr(today: String): String = {
     val todayMillis = new SimpleDateFormat("yyyy-MM-dd").parse(today).getTime()
     val fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
