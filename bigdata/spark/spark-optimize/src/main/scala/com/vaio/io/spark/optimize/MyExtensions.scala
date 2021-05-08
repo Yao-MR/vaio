@@ -17,7 +17,7 @@ case class MyRule(spark: SparkSession) extends Rule[LogicalPlan] with Logging {
   override def apply(plan: LogicalPlan): LogicalPlan = {
     logInfo("开始应用 MyRule 优化规则")
     plan transformAllExpressions {
-      case Multiply(left, right) if right.isInstanceOf[Literal] &&
+      case Multiply(left, right, false) if right.isInstanceOf[Literal] &&
         right.asInstanceOf[Literal].value.isInstanceOf[Decimal] &&
         right.asInstanceOf[Literal].value.asInstanceOf[Decimal].toDouble == 1.0 =>
         logInfo("MyRule 优化规则生效")

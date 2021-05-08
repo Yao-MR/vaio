@@ -37,7 +37,7 @@ object MyOptimize {
     System.out.println("逻辑执行计划-------------------")
 
     logicPlan match {
-      case InsertIntoStatement(table: LogicalPlan, _, child: LogicalPlan, _, _) =>
+      case InsertIntoStatement(table: LogicalPlan, _, child: LogicalPlan, _, false,false) =>
         val ddl = new QueryExecution(session, child).analyzed.schema.toDDL
         val realtionName = table.asInstanceOf[UnresolvedRelation].name;
         System.out.println(ddl)
