@@ -15,12 +15,12 @@ import org.apache.spark.sql.types.Decimal
  */
 case class MyRule(spark: SparkSession) extends Rule[LogicalPlan] with Logging {
   override def apply(plan: LogicalPlan): LogicalPlan = {
-    logInfo("开始应用 MyRule 优化规则")
+    logWarning("开始应用 MyRule 优化规则")
     plan transformAllExpressions {
       case Multiply(left, right, false) if right.isInstanceOf[Literal] &&
         right.asInstanceOf[Literal].value.isInstanceOf[Decimal] &&
         right.asInstanceOf[Literal].value.asInstanceOf[Decimal].toDouble == 1.0 =>
-        logInfo("MyRule 优化规则生效")
+        logWarning("MyRule 优化规则生效")
         left
     }
   }
@@ -28,7 +28,7 @@ case class MyRule(spark: SparkSession) extends Rule[LogicalPlan] with Logging {
 
 class MyExtensions extends (SparkSessionExtensions => Unit) with Logging {
   def apply(e: SparkSessionExtensions): Unit = {
-    logInfo("进入MyExtensions扩展点")
+    logWarning("进入MyExtensions扩展点")
     e.injectResolutionRule(MyRule)
   }
 }
