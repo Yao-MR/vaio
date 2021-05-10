@@ -1,17 +1,17 @@
 package com.vaio.io.spark.optimize.catalog
 
-import org.apache.spark.sql.connector.catalog.CatalogPlugin
-import org.apache.spark.sql.util.CaseInsensitiveStringMap
+import com.vaio.io.spark.optimize.datasource.CustomTable
+import org.apache.spark.internal.Logging
+import org.apache.spark.sql.connector.catalog.{CatalogPlugin, DelegatingCatalogExtension}
+import org.apache.spark.sql.connector.catalog.{DelegatingCatalogExtension, Identifier, Table}
+
 /**
  *
  * @author yao.wang (Yao.MR.CN@GMail.com)
  * @date 2021-04-27
  */
-class DummyCatalog extends CatalogPlugin{
-  private var  _name  : String = null
-  override def initialize(s: String, caseInsensitiveStringMap: CaseInsensitiveStringMap): Unit = {
- _name = s
-  }
-  override def name(): String = _name
-  override def defaultNamespace(): Array[String] = Array("a", "b")
-}
+class CustomCatalog extends DelegatingCatalogExtension with Logging {
+
+  override def name(): String = "CUSTOM"
+
+  override def loadTable(ident: Identifier): Table = CustomTable(ident)
