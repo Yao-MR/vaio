@@ -17,5 +17,6 @@
         <module>spark-batch</module>
         <module>spark-optimize</module>
         <module>spark-delta</module>
+      <module>spark-sql</module>
     </modules>
 </project>
