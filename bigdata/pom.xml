@@ -18,5 +18,6 @@
         <module>hdfs</module>
         <module>yarn</module>
         <module>calcite</module>
+      <module>lake</module>
     </modules>
 </project>
