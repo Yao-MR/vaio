@@ -40,31 +40,6 @@
     </dependencies>
   </dependencyManagement>
 
-  <repositories>
-    <repository>
-      <id>alimaven</id>
-      <name>Maven Aliyun Mirror</name>
-      <url>https://maven.aliyun.com/nexus/content/repositories/central/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>alimaven</id>
-      <name>aliyun maven</name>
-      <url>https://maven.aliyun.com/nexus/content/repositories/central/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
   <dependencies>
     <dependency>
       <groupId>joda-time</groupId>
