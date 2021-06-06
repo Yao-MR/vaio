@@ -14,7 +14,5 @@ object SparkTest {
       .master("local")
       .appName("JavaWordCount")
       .getOrCreate();
-
-
   }
 }
